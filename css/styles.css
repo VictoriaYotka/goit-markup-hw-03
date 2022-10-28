@@ -1,4 +1,9 @@
 :root{
+    /* Fonts */
+    --main-font: "Roboto", sans-serif;
+    --logo-font:'Raleway', sans-serif;
+
+    /* Colors */
     --header-logo-color: #000000;
     --footer-logo-color: #FFFFFF;
     --header-contacts-color: #757575;
@@ -11,21 +16,57 @@
     --main-text-color: #757575;
     --accent-color: #2196F3;
     --address-color: #ffffff;
+
+    /* Others */
+    --indent: 30px;
+    --items: 3;
 }
 
+/* Base styles */
 body {
-    font-family: "Roboto", sans-serif;
-    font-size: 14;
+    font-family: var(--main-font);
+    font-size: 14px;
     color: var(--title-color);
     background-color: var(--main-bcg-color);
 }
 
+/* Reset start*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
 .list {
-list-style: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .link {
     text-decoration: none;
+}
+
+img {
+    display: block;
+}
+/* Reset end*/
+
+.section {
+    padding-top: 94px;
+    padding-bottom: 94px;
+}
+
+.container {
+    width: 1200px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: 200px;
+    margin-left: 200px;
 }
 
 .btn {
@@ -33,6 +74,10 @@ list-style: none;
     text-align: center;
     cursor: pointer;
     border: none;
+    border-radius: 4px;
+
+    padding: 10px 32px;
+    min-height: 38px;
 }
 
 .section-title {
@@ -41,6 +86,18 @@ list-style: none;
     line-height: calc(42/36);
     text-align: center;
     letter-spacing: 0.03em;
+    margin-bottom: 50px;
+}
+
+.card-set {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card-set-item {
+    flex-basis: calc((100% - var(--indent) * (var(--items) - 1)) / (var(--items)));
 }
 
 .visually-hidden {
@@ -56,18 +113,42 @@ list-style: none;
     margin: -1px;
 }
 /* -----------------HEADER----------------------- */
+.header {
+    border-bottom: 1px solid var(--secondary-bcg-color);
+}
+.header-container {
+    display: flex;
+    align-items: baseline;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
 .logo {
-    font-family: 'Raleway', sans-serif;
+    font-family: var(--logo-font);
     font-weight: 700;
     font-size: 26px;
     line-height: calc(31/26);
     letter-spacing: 0.03em;
     color: var(--accent-color);
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    display: block;
+    padding-top: 24px;
+    padding-bottom: 25px;
+    margin-right: 93px;
 }
 
 .logo-part {
     color: var(--header-logo-color);
+}
+
+.site-nav {
+    margin-right: 344px;
+}
+
+.nav-list {
+    display: flex;
+    gap: 50px;
 }
 
 .nav-link {
@@ -78,6 +159,7 @@ list-style: none;
     color: inherit;  
 }
 
+
 .nav-link:hover,
 .nav-link:focus {
     color: var(--accent-color);
@@ -85,6 +167,20 @@ list-style: none;
 
 .link-current {
     color: var(--accent-color);
+}
+
+.nav-link,
+.contact-link {
+    display: block;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.contact-list {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: 50px;
 }
 
 .contact-link {
@@ -102,6 +198,11 @@ list-style: none;
 /* -----------------HERO----------------------- */
 .hero-section {
     background-color: var(--dark-bcg-color);
+    padding-top: 200px;
+    padding-bottom: 200px;
+}
+.hero-container {
+    text-align: center;
 }
 
 .hero-title {
@@ -112,6 +213,11 @@ list-style: none;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--hero-title-color);
+
+    width: 696px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 30px;
 }
 
 .hero-btn {
@@ -123,6 +229,13 @@ list-style: none;
 }
 
 /* -----------------SPECIFIIC----------------------- */
+.specific-list {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 30px;
+}
+
 .scecific-item-title {
     font-size: 14px;
     line-height: calc(16/14);
@@ -136,7 +249,16 @@ list-style: none;
     color: var(--main-text-color)
 }
 
+.scecific-item-title,
+.specific-item-text {
+    width: 270px;
+}
+
 /* -----------------ACTIVITIES----------------------- */
+
+.activities-section {
+    padding-top: 0;
+}
 
 /* -----------------TEAM----------------------- */
 .team-section {
@@ -144,7 +266,13 @@ list-style: none;
 }
 
 .team-list {
+        --items: 4;
     background-color: var(--address-color);
+}
+
+.team-item-descr{
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .team-item-title {
@@ -152,27 +280,36 @@ list-style: none;
     font-size: 16px;
     line-height: calc(19/16);
     letter-spacing: 0.03em;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .team-item-text {
     font-size: 16px;
     line-height: calc(19/16);
     letter-spacing: 0.03em;
+    text-align: center;
     color: var(--main-text-color);
 }
 
 /* -----------------FOOTER----------------------- */
 .footer-section {
     background-color: var(--dark-bcg-color);
+        padding-top: 40px;
+        padding-bottom: 60px;
 }
 
 .logo-footer {
-    font-family: 'Raleway', sans-serif;
+    font-family: var(--logo-font);
     font-weight: 700;
     font-size: 26px;
     line-height: calc(31/26);
     letter-spacing: 0.03em;
     color: var(--accent-color);
+    
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .logo-footer-part {
@@ -197,6 +334,9 @@ list-style: none;
     font-style: normal;
     line-height: calc(24/14);
     letter-spacing: 0.03em;
+
+    display: inline-block;
+    margin-top: 9px;
 }
 
 .contact-link-footer:hover,
@@ -205,8 +345,19 @@ list-style: none;
 }
 
 /* -----------------PORTFOLIO PAGE----------------------- */
+.portfolio-section {
+    padding-top: 94px;
+    padding-bottom: 94px;
+}
 
 /* -----------------BUTTON LIST----------------------- */
+.button-list {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 50px;
+}
+
 .portfolio-btn {
     font-weight: 500;
     font-size: 16px;
@@ -221,15 +372,26 @@ list-style: none;
     background-color: var(--accent-color);
 }
 
+/* -----------------EXAMPLES----------------------- */
+.examples-list {
+    display: flex;
+}
+
+.example-descr {
+    padding: 20px 24px;
+    border: 1px solid var(--secondary-bcg-color);;
+}
+
 .example-title {
     font-size: 18px;
     line-height: calc(36/18);
     letter-spacing: 0.06em;
-}
+}    
 
 .example-text {
     font-size: 16px;
     line-height: calc(30/16);
     letter-spacing: 0.03em;
-    color: var(--main-text-color)
+    color: var(--main-text-color);
+
 }
