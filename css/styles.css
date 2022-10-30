@@ -290,7 +290,7 @@ img {
 /* -----------------FOOTER----------------------- */
 .footer-section {
     background-color: var(--dark-bcg-color);
-        padding-top: 40px;
+        padding-top: 60px;
         padding-bottom: 60px;
 }
 
@@ -303,8 +303,7 @@ img {
     color: var(--accent-color);
     
     display: block;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .logo-footer-part {
@@ -361,6 +360,8 @@ margin-bottom: 9px;
     line-height: calc(26/16);
     letter-spacing: 0.03em;
     background-color: var(--secondary-bcg-color);
+    padding: 6px 22px
+
 }
 
 .portfolio-btn:hover,
@@ -384,6 +385,7 @@ margin-bottom: 9px;
     font-size: 18px;
     line-height: calc(36/18);
     letter-spacing: 0.06em;
+    margin-bottom: 4px;
 }    
 
 .example-text {
